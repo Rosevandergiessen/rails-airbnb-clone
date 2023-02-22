@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show new create destroy]
   before_action :set_product, only: %i[show edit update destroy]
 
-
   def index
     if params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query OR address ILIKE :query"
