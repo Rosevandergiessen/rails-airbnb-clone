@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show new create destroy]
   before_action :set_product, only: %i[show edit update destroy]
 
-
   def index
     if params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query OR address ILIKE :query"
@@ -15,7 +14,7 @@ class ProductsController < ApplicationController
       {
         lat: product.latitude,
         lng: product.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { product: product }),
+        info_window: render_to_string(partial: "info_window", locals: { product: @product}),
         image_url: helpers.asset_url("logo.png")
       }
     end

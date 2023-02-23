@@ -8,7 +8,6 @@ export default class extends Controller {
     markers: Array
   }
 
-
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
 
@@ -28,6 +27,7 @@ export default class extends Controller {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
 
       const customMarker = document.createElement("div")
+      
     customMarker.className = "marker"
     customMarker.style.backgroundImage = `url('https://cdn2.iconfinder.com/data/icons/pins-1-2/24/style-three-pin-skate--skateboard-style-map-park-navigation-three-maps-skate-pin-gps-1024.png')`
     customMarker.style.backgroundSize = "contain"
