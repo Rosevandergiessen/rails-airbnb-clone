@@ -1,13 +1,13 @@
-
+<div class="photo">
 <div class="container pt-5">
-  <h2>Find a board</h2>
+  <h2 class="text-white">Find a board</h2>
     <%= form_with url: products_path, method: :get, class: "d-flex pb-3" do %>
       <%= text_field_tag :query,
     params[:query],
     class: "form-control border border-dark",
     placeholder: "Get skating..."
       %>
-      <%= submit_tag "Search", class: "btn btn-dark p-4" %>
+      <%= submit_tag "Search", class: "btn btn-dark" %>
     <% end %>
     <%# <div class="list">
       <%= link_to "Back to home", root_path%>
@@ -15,7 +15,7 @@
     <%# </div> %>
 
 
-  <h4 class="pt-3">Rent out a skateboard</h4>
+  <h4 class="pt-3 text-white">Rent out a skateboard</h4>
 
   <div class="card-container">
     <div class="cards">
@@ -27,7 +27,7 @@
         <% else %>
         <%= image_tag "landing_page.jpeg", :radius => 10, class: "img"%>
       <% end %>
-        <%= link_to product.name, product_path(product), class: "overlay"%>
+        <%= link_to product.name, product_path(product), class: "overlay px-2"%>
       </div>
       <% end %>
     </div>
@@ -38,6 +38,6 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     <br>
 
-
+</div>
 </div>
 </div>
